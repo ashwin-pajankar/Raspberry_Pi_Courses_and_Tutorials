@@ -1,0 +1,78 @@
+https://www.raspberrypi.com/software/
+sudo apt install rpi-imager -y
+
+Download URL
+
+https://www.freebsd.org/where/
+
+pkg install sudo
+sudo pkg install nano
+
+Enable root login and X11 Forwarding
+
+
+sudo pkg install xauth
+
+Enable the following options in /etc/ssh/sshd_config
+
+PermitRootLogin yes
+AllowTcpForwarding yes 
+X11Forwarding yes 
+X11UseLocalhost no
+
+sudo service sshd_restart
+sudo init 6
+
+https://mobaxterm.mobatek.net/
+https://nmap.org/zenmap/
+nmap -sn 192.168.0.*
+
+Apply Security Patches
+
+freebsd-update fetch
+freebsd-update install
+
+Upgrading OS
+
+freebsd-version
+
+freebsd-update upgrade -r 13.0-RELEASE
+freebsd-update install
+sudo reboot
+freebsd-update install
+
+Upgrading installed packages
+
+pkg-static upgrade -f
+pkg-static install -f pkg
+pkg bootstrap -f
+pkg update
+pkg upgrade
+
+freebsd-update install
+
+Install gcc
+sudo pkg install lang/gcc
+
+Install XFCE
+
+sudo pkg install -y xorg
+sudo pkg install -y slim
+
+sudo nano /etc/rc.conf
+moused_enable="YES" 
+slim_enable="YES"
+dbus_enable="YES"
+hald_enable="YES"
+
+pkg install -y xfce
+
+sudo nano .xinitrc
+exec xfce4-session
+
+init 6
+
+cat /etc/shells
+
+sudo pkg install -y firefox-esr
+

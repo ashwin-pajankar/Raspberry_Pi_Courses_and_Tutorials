@@ -1,0 +1,45 @@
+https://www.raspberrypi.com/software/
+sudo apt install rpi-imager -y
+https://raspi.debian.net/tested-images/
+
+Search the IP Address with the following tools,
+https://nmap.org/zenmap/
+nmap -sn 192.168.0.*
+
+Find out the IP address and then use the following tools to connect,
+https://mobaxterm.mobatek.net/
+
+passwd
+
+apt install -y sudo
+apt install -y nano
+
+sudo nano /etc/ssh/sshd_config
+
+PermitRootLogin yes
+X11Forwarding yes
+
+sudo init 6
+
+sudo apt install -y xorg slim xfce4
+sudo apt install -y firefox-esr
+sudo apt install -y gcc
+sudo apt install -y g++
+
+sudo hostnamectl set-hostname rpi4
+sudo nano /etc/hosts
+invoke-rc.d hostname.sh start
+
+sudo apt autoremove -y
+
+cat /etc/shells
+
+
+nmcli radio wifi
+nmcli radio wifi on
+nmcli dev wifi list
+nmcli d wifi connect TP-Link_710E password internet1
+nmcli con show
+nmcli dev status
+
+sudo init 6

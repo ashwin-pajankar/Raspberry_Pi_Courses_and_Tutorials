@@ -1,0 +1,53 @@
+https://www.raspberrypi.com/software/
+
+create an empty file named ssh.
+The following are the contents of wpa_supplicant.conf
+
+country=IN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+scan_ssid=1
+ssid="TP-Link_710E"
+psk="internet1"
+}
+
+Search the IP Address with the following tools,
+https://nmap.org/zenmap/
+nmap -sn 192.168.0.*
+
+Find out the IP address and then use the following tools to connect,
+https://mobaxterm.mobatek.net/
+
+After logging in, run the following command on the terminal,
+
+sudo raspi-config
+
+Once the entire setup is done, then run the following commands,
+
+sudo rm /etc/xdg/autostart/piwiz.desktop
+
+https://www.realvnc.com/en/connect/download/viewer/
+
+Commands to update the software and the firmware
+
+sudo apt update
+sudo apt full-upgrade -y
+sudo rpi-update
+
+sudo apt install konsole -y
+
+Enable X11 Forwarding
+Open the following file,
+sudo nano /etc/ssh/sshd_config
+Enable the following line by removeing # in the beginning
+X11Forwarding yes
+
+sudo apt autoremove -y
+
+cat /etc/shells
+
+sudo init 6
+
+sudo apt install leafpad -y

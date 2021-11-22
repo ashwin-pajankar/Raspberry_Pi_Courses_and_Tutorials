@@ -1,0 +1,33 @@
+GNOME
+
+sudo apt update
+sudo apt install task-gnome-desktop gnome-core gnome-software -y
+sudo apt install slim -y
+
+Choosing the login manager
+sudo dpkg-reconfigure slim
+
+Install xfce
+
+sudo apt install xfce4 xorg -y
+
+Install KDE Desktop
+
+sudo apt install kde-standard kde-plasma-desktop -y
+
+Install Cinnamon
+
+sudo apt install cinnamon -y
+
+Install MATE
+
+sudo apt install mate-desktop-environment -y
+
+Install LXDE and LXQT
+
+sudo apt install task-lxde-desktop -y
+sudo apt install task-lxqt-desktop -y
+sudo apt install lxsession -y
+
+Add the following line to .bashrc
+PATH=$PATH:/home/pi/.local/bin

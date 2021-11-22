@@ -1,0 +1,55 @@
+https://www.raspberrypi.com/software/
+
+sudo apt install rpi-imager -y
+
+https://ubuntu.com/download/raspberry-pi
+
+Modify the network-config file in the SD Card
+
+Search the IP Address with the following tools,
+https://nmap.org/zenmap/
+
+Find out the IP address and then use the following tools to connect,
+https://www.putty.org/
+https://mobaxterm.mobatek.net/
+
+sudo apt update
+
+sudo apt purge gnome
+sudo apt remove --purge gnome*
+
+sudo apt install -y xserver-xorg xfce4 lightdm xfce4-goodies
+sudo apt install xrdp -y
+sudo apt remove slim gdm3 -y
+
+# Setup the timezone
+timedatectl list-timezones
+sudo timedatectl set-timezone Asia/Kolkata
+timedatectl
+cat /etc/timezone
+
+# Setup the keyboard
+sudo apt-get install console-common -y
+sudo dpkg-reconfigure console-data
+
+sudo apt install net-tools -y
+
+# Setting the Xfce to default
+sudo systemctl set-default graphical.target
+sudo systemctl get-default
+sudo dpkg-reconfigure lightdm
+sudo update-alternatives --config x-session-manager
+sudo update-alternatives --config x-window-manager
+
+# Install Firefox
+sudo apt install firefox -y
+
+# Install Synaptic Package Manager
+sudo apt install synaptic -y
+
+# Remove unnecessary packages
+sudo apt remove xterm -y
+sudo apt remove xfburn -y
+sudo apt autoremove -y
+
+cat /etc/shells
