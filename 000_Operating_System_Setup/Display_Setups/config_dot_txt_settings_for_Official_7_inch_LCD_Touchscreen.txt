@@ -1,0 +1,5 @@
+Add the following line
+lcd_rotate=2
+
+Comment the following line
+# dtoverlay=vc4-kms-v3d
