@@ -6,6 +6,10 @@ https://ubuntu.com/download/raspberry-pi
 
 Modify the network-config file in the SD Card
 
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
 Search the IP Address with the following tools,
 https://nmap.org/zenmap/
 
